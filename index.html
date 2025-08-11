@@ -1,310 +1,452 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Neil Zhou | SE · 摄影师 · 视频创作者</title>
-  <meta name="description" content="系统工程师、摄影师与视频创作者的个人主页：项目经历、作品集、技术文章与联系方式。" />
-  <meta name="keywords" content="系统工程师, 摄影, 视频创作, ISP, 计算摄影, 作品集" />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎥</text></svg>">
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Neil Zhou | SE · 摄影师 · 视频创作者" />
-  <meta property="og:description" content="项目经历、作品集、技术文章与联系方式。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://picsum.photos/1200/630" />
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Neil Zhou",
-    "url": "https://example.com",
-    "jobTitle": "System Engineer / Photographer / Filmmaker",
-    "sameAs": [
-      "https://github.com/yourname",
-      "https://www.linkedin.com/in/yourname",
-      "https://www.instagram.com/yourname"
-    ]
-  }
-  </script>
-  <style>
-    :root{--max:1200px;--pad:clamp(16px,2vw,32px);--radius:16px;--bg:#0b0c10;--card:#11131a;--text:#e8ecf1;--muted:#a5adba;--brand:#7aa2f7;--accent:#f5a97f;--line:#1b1f2a}
-    @media (prefers-color-scheme: light){:root{--bg:#f7f8fa;--card:#ffffff;--text:#14171f;--muted:#5b6472;--brand:#325dff;--accent:#ff7a59;--line:#e9edf3}}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-    /* Header */
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(to bottom,rgba(0,0,0,.5),transparent)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad)}
-    .nav a.logo{font-weight:800;letter-spacing:.2px}
-    .nav .links{display:flex;gap:16px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.08)}
-    .btn:hover{transform:translateY(-1px)}
-    .ghost{background:transparent}
-    .chip{padding:.25rem .6rem;border:1px solid var(--line);border-radius:999px;font-size:.8rem;color:var(--muted)}
-    /* Hero */
-    .hero{padding:72px 0 40px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.1;margin:.2em 0}
-    .hero p{color:var(--muted);max-width:60ch}
-    .badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-    .hero .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-    .kpi .item{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:10px;text-align:center}
-    /* Sections */
-    section{padding:40px 0;border-top:1px solid var(--line)}
-    h2{font-size:clamp(22px,3vw,28px);margin:.2em 0 8px}
-    .sub{color:var(--muted);margin:0 0 16px}
-    /* Grids */
-    .grid{display:grid;gap:16px}
-    .grid.cards{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-    .card .cover{aspect-ratio:16/9;object-fit:cover;width:100%}
-    .card .body{padding:14px}
-    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    /* Timeline */
-    .timeline{position:relative}
-    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
-    .tl-item{position:relative;margin-left:28px;padding-left:16px;margin-bottom:18px}
-    .tl-item::before{content:"";position:absolute;left:-10px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand)}
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1px solid var(--line);cursor:pointer}
-    /* Footer */
-    footer{padding:40px 0;color:var(--muted);text-align:center}
-    /* Responsive */
-    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(3,1fr)}}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Neil Zhou — 影像 × 设计</title>
+<meta name="description" content="Neil Zhou｜艺术设计 × 科技｜视频SE｜相机/ISP｜影像与计算摄影"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* 波普 & 奢华配色 */
+  --bg:#0b0e14;
+  --pop-c:#00e6ff; /* Cyan */
+  --pop-m:#ff3ab2; /* Magenta */
+  --pop-y:#ffd400; /* Yellow */
+  --pop-k:#111;    /* Key/Black */
+  --gold1:#f6d365; --gold2:#fda085; /* 金色渐变 */
+  --panel:rgba(255,255,255,.06);
+  --text:#f2f6fb; --muted:#9fb0c8;
+  --radius:20px; --maxw:1200px;
+  --shadow:0 18px 40px rgba(0,0,0,.45);
+  --grid:rgba(255,255,255,.08);
+}
+
+/* 基础排版 */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:var(--pop-c);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:auto;padding:0 22px}
+
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+  background:linear-gradient(to bottom,rgba(10,14,20,.85),rgba(10,14,20,.35));
+  border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{display:flex;align-items:center;gap:20px;padding:14px 20px}
+.brand{font-family:Orbitron,Inter;letter-spacing:.16em;font-weight:600;font-size:16px;color:#fff}
+.nav a{color:#e9f1ff;opacity:.9;padding:8px 10px;border-radius:999px}
+.nav a:hover{background:var(--panel);opacity:1}
+.nav .spacer{flex:1}
+.btn{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:999px;box-shadow:var(--shadow)}
+
+h1{margin:16px 0 8px;font-size:clamp(30px,6vw,60px);line-height:1.1}
+h2{font-size:clamp(22px,3.6vw,36px);margin:0 0 22px}
+section{padding:68px 0}
+
+/* ===== 背景：波普文化风格 ===== */
+#bg, #pop, #halftone{position:fixed;inset:0;z-index:-3;display:block;width:100vw;height:100vh}
+#bg{z-index:-3} /* 粒子canvas */
+#pop{z-index:-2;pointer-events:none;
+/* CMYK 大色块（随时间缓慢漂移） */
+background:
+  radial-gradient(800px 600px at 12% 18%, rgba(0,230,255,.20), transparent 60%),
+  radial-gradient(700px 500px at 85% 20%, rgba(255,58,178,.18), transparent 62%),
+  radial-gradient(900px 700px at 10% 85%, rgba(255,212,0,.18), transparent 60%),
+  radial-gradient(1000px 700px at 80% 80%, rgba(255,255,255,.08), transparent 60%);
+animation:pop-drift 24s ease-in-out infinite alternate}
+@keyframes pop-drift{
+  0%{filter:saturate(1.05) hue-rotate(0deg)} 
+  100%{filter:saturate(1.25) hue-rotate(8deg)}
+}
+/* 半调网点覆盖层（波普标志性质感） */
+#halftone{z-index:-1;pointer-events:none;
+  background:
+   radial-gradient(circle at 0 0, rgba(255,255,255,.06) 2px, transparent 2px),
+   radial-gradient(circle at 8px 8px, rgba(255,255,255,.06) 2px, transparent 2px);
+  background-size:16px 16px,16px 16px;
+  mix-blend-mode:overlay;opacity:.35}
+
+/* ===== HERO ===== */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:8vh 0 10vh}
+@media (max-width: 900px){ .hero{grid-template-columns:1fr;padding:6vh 0} }
+.badge{display:inline-flex;gap:8px;padding:6px 12px;border-radius:999px;
+  background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.2);color:var(--muted);font-size:12px}
+.subtitle{font-size:clamp(14px,2.4vw,18px);color:var(--muted)}
+.panel{background:linear-gradient(to bottom right, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.16); border-radius: var(--radius); padding:20px; box-shadow: var(--shadow)}
+.kv{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;position:relative}
+.kv video,.kv img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.06) saturate(1.08)}
+.scanline{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.05) 0 1px, transparent 1px 3px);mix-blend-mode:overlay;opacity:.22;animation:scan 6s linear infinite}
+@keyframes scan{to{transform:translateY(3px)}}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#111;background:#fff;border:1px solid rgba(255,255,255,.6);padding:7px 12px;border-radius:999px}
+
+/* ===== 大而奢华画廊 ===== */
+.gallery-wrap{max-width:min(1400px,92vw);margin:0 auto}
+.gallery{
+  display:grid;gap:16px;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:28px; /* 控制纵向密度 */
+}
+@media (max-width: 1100px){
+  .gallery{grid-template-columns:repeat(8,1fr)}
+}
+@media (max-width: 700px){
+  .gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:26px}
+}
+.tile{
+  position:relative;overflow:hidden;border-radius:18px;
+  background:#0c0f14; 
+  /* 金色外框与光泽 */
+  border:2px solid transparent;
+  background-image:
+    linear-gradient(#0c0f14,#0c0f14),
+    linear-gradient(120deg,var(--gold1),var(--gold2));
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  box-shadow:0 20px 50px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06) inset;
+  transition:transform .35s ease, box-shadow .35s ease, filter .35s ease;
+}
+.tile:hover{transform:translateY(-4px); box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.1) inset; filter:saturate(1.06)}
+.tile img,.tile video{width:100%;height:100%;object-fit:cover;display:block}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-size:13px;color:#0b0e14;
+  background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.92) 100%);
+  font-weight:600;letter-spacing:.02em;mix-blend-mode:screen;opacity:.0;transition:.3s}
+.tile:hover .cap{opacity:.9}
+
+/* 各种大尺寸占位：让画面“豪气” */
+.span-3x4{grid-column:span 3;grid-row:span 4}
+.span-4x5{grid-column:span 4;grid-row:span 5}
+.span-6x7{grid-column:span 6;grid-row:span 7}
+.span-8x8{grid-column:span 8;grid-row:span 8}
+.span-12x9{grid-column:span 12;grid-row:span 9}
+@media (max-width:1100px){
+  .span-8x8{grid-column:span 8}
+  .span-12x9{grid-column:span 8}
+}
+@media (max-width:700px){
+  .span-6x7{grid-column:span 4}
+  .span-8x8,.span-12x9{grid-column:span 4}
+}
+
+/* 灯箱（轻量） */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100}
+.lightbox.open{display:flex}
+.lightbox-content{max-width:90vw;max-height:86vh;border-radius:14px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.7)}
+.lightbox-content img,.lightbox-content video{width:100%;height:100%;object-fit:contain;background:#000}
+.lightbox-close{position:fixed;top:20px;right:24px;background:#fff;color:#111;border:none;border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer}
+
+/* 时间线/卡片 */
+.card{position:relative;background:var(--panel);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:18px;box-shadow:var(--shadow);overflow:hidden}
+.grid{display:grid;gap:18px}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:900px){.grid.cols-2{grid-template-columns:1fr}}
+.timeline{position:relative;padding-left:26px}
+.timeline:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold1),var(--gold2))}
+.titem{position:relative;margin:14px 0;padding:12px 14px;background:var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:12px}
+.titem:before{content:"";position:absolute;left:-22px;top:14px;width:10px;height:10px;border-radius:50%;background:linear-gradient(120deg,var(--gold1),var(--gold2))}
+
+/* 页脚 */
+footer{padding:40px 0 80px;color:var(--muted);border-top:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(to top,rgba(10,14,20,.7),rgba(10,14,20,0))}
+</style>
 </head>
 <body>
-  <header class="wrap">
+  <!-- 背景：粒子 + 波普色块 + 半调网点 -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div id="pop" aria-hidden="true"></div>
+  <div id="halftone" aria-hidden="true"></div>
+
+  <header>
     <nav class="nav">
-      <a class="logo" href="#home">Neil Zhou</a>
-      <div class="links">
-        <a href="#projects">项目</a>
-        <a href="#gallery">作品</a>
-        <a href="#writing">文章</a>
-        <a href="#about">关于</a>
-        <a href="#contact" class="btn ghost">联系</a>
-        <button id="langToggle" class="btn" aria-label="Language">中/EN</button>
-        <button id="themeToggle" class="btn" aria-label="Theme">🌓</button>
-      </div>
+      <div class="brand">NEIL ZHOU</div>
+      <a href="#about">关于我</a>
+      <a href="#projects">项目</a>
+      <a href="#gallery">画廊</a>
+      <a href="#experience">经历</a>
+      <a href="#contact">联系</a>
+      <div class="spacer"></div>
+      <a class="btn" href="#cv">下载简历</a>
     </nav>
   </header>
 
-  <main id="home" class="wrap hero">
-    <div class="hero-grid">
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="home">
       <div>
-        <span class="chip" data-i18n="roles">系统工程师 · 摄影师 · 视频创作者</span>
-        <h1 data-i18n="headline">让工程思维与影像叙事同频共振。</h1>
-        <p data-i18n="intro">我在移动影像与视频系统领域工作，专注于 ISP / 编解码 / 计算摄影与实时视频处理。同时拍摄纪录和商业影像，追求技术与美学的平衡。</p>
-        <div class="badges">
-          <span class="chip">ISP · AINR · EIS</span>
-          <span class="chip">Dolby Vision · HDR</span>
-          <span class="chip">Android Camera · HAL3</span>
-        </div>
-        <div class="kpi">
-          <div class="item"><div style="font-weight:700;font-size:20px">15+</div><div class="sub" data-i18n="patents">发明专利</div></div>
-          <div class="item"><div style="font-weight:700;font-size:20px">8</div><div class="sub" data-i18n="projects_count">量产项目</div></div>
-          <div class="item"><div style="font-weight:700;font-size:20px">3年</div><div class="sub" data-i18n="exp">影像经验</div></div>
-        </div>
-        <div style="margin-top:18px;display:flex;gap:10px">
-          <a class="btn" href="#projects" data-i18n="view_projects">查看项目</a>
-          <a class="btn" href="#contact" data-i18n="hire_me">合作联系</a>
+        <div class="badge">艺术设计 × 科技｜视频SE｜相机 / ISP</div>
+        <h1>你好，我是 Neil。<br/>做影像系统，也做影像设计。</h1>
+        <p class="subtitle">把 <strong>视频画质 / ISP Pipeline / AI 降噪与稳像</strong> 和 <strong>电影语言</strong> 混合出新的美学。</p>
+        <div class="row" style="margin-top:14px">
+          <a class="chip" href="#projects">查看项目</a>
+          <a class="chip" href="#gallery">进入画廊</a>
+          <a class="chip" href="#contact">合作与交流</a>
         </div>
       </div>
-      <div class="card">
-        <img class="cover" src="https://picsum.photos/1200/675?blur=1" alt="cover">
-        <div class="body">
-          <strong data-i18n="feature_title">最新作品 · 夜景视频降噪方案</strong>
-          <p class="sub" data-i18n="feature_desc">基于 AINR 的联合去马赛克降噪，在极暗场景下保持细节与自然颗粒，显著提升实时通话与录制画质。</p>
-          <div class="meta">
-            <span class="chip">AINR</span><span class="chip">实时</span><span class="chip">Qualcomm</span>
+      <div class="panel">
+        <div class="kv">
+          <img src="assets/gallery/myself01.jpg" poster="assets/gallery/myself01.jpg" autoplay muted loop playsinline></img>
+          <div class="scanline"></div>
+        </div>
+        <div class="subtitle" style="margin-top:10px">短片片段｜波普色彩与城市光影（可替换为B站外链或本地 mp4）</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>关于我</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Bio</h3>
+          <p>视频系统工程师（SE），聚焦 <strong>ISP 架构、视频调优、AI 视频处理、系统功耗</strong>。项目涉及 Lofic/DCG/HDR、Dolby Vision 录制、EIS/DIS 稳像、AINR 联合降噪等。私下做摄影与图形设计，偏爱波普与电影感的融合。</p>
+          <p class="subtitle">关键词：IFE/BPS/IPE｜AINR｜Dolby Vision｜色域映射｜多光谱｜UX 叙事</p>
+        </div>
+        <div class="card">
+          <h3>现在在做</h3>
+          <ul>
+            <li>高帧率视频链路画质/功耗平衡</li>
+            <li>视频 AINR（去噪+去马赛克）工程化</li>
+            <li>调色与色调/色域映射可视化工具</li>
+            <li>个人影像：街头、空间与光</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>精选项目</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Dolby Vision 录制链路优化</h3>
+          <p class="subtitle">视频系统｜功耗｜HDR｜2025</p>
+          <p>整合 RPU 元数据生成与编码打包；对夜景 HDR 做亮度结构优化，降低能耗与发热。</p>
+        </article>
+        <article class="card">
+          <h3>视频 AINR & 稳像协同</h3>
+          <p class="subtitle">AI｜去噪｜EIS/DIS｜2025</p>
+          <p>把时域降噪与稳像轨迹约束协同设计，构建统一时域特征缓存，减少重复计算。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALLERY：大而奢华 -->
+    <section id="gallery" class="gallery-wrap">
+      <h2>画廊（摄影 + 视频）</h2>
+      <div class="gallery">
+        <!-- 你可以替换为自己的 jpg/mp4；B站用封面图 + 外链也行 -->
+        <div class="tile span-12x9" data-type="img" data-src="assets/gallery/hero_wide.jpg">
+          <img src="assets/gallery/hero_wide.jpg" alt="Signature wide hero">
+          <div class="cap">Signature Series — Wide</div>
+        </div>
+
+        <div class="tile span-8x8" data-type="video" data-src="assets/gallery/city_loop.mp4">
+          <video src="assets/gallery/city_loop.mp4" muted loop playsinline></video>
+          <div class="cap">City Motion — Loop</div>
+        </div>
+
+        <div class="tile span-6x7" data-type="img" data-src="assets/gallery/portrait_color.jpg">
+          <img src="assets/gallery/portrait_color.jpg" alt="Portrait Pop">
+          <div class="cap">Portrait — Pop Color</div>
+        </div>
+
+        <div class="tile span-4x5" data-type="img" data-src="assets/gallery/street_01.jpg">
+          <img src="assets/gallery/street_01.jpg" alt="Street Study">
+          <div class="cap">Street Study</div>
+        </div>
+
+        <div class="tile span-4x5" data-type="img" data-src="assets/gallery/space_light.jpg">
+          <img src="assets/gallery/space_light.jpg" alt="Space & Light">
+          <div class="cap">Space & Light</div>
+        </div>
+
+        <div class="tile span-8x8" data-type="img" data-src="assets/gallery/color_blocks.jpg">
+          <img src="assets/gallery/color_blocks.jpg" alt="Color Blocks">
+          <div class="cap">Color Blocks — Pop</div>
+        </div>
+
+        <div class="tile span-3x4" data-type="img" data-src="assets/gallery/detail_gold.jpg">
+          <img src="assets/gallery/detail_gold.jpg" alt="Detail Gold">
+          <div class="cap">Detail Gold</div>
+        </div>
+
+        <a class="tile span-6x7" href="https://www.bilibili.com/video/BV1QRyaYhEEQ/?spm_id_from=333.1387.homepage.video_card.click&vd_source=652bb66d1a6ef0c02929fb113cad3fb3" target="_blank" rel="noreferrer">
+          <img src="assets/gallery/bili_cover.jpg" alt="Bilibili Shortfilm">
+          <div class="cap">短片合集（B站）</div>
+        </a>
+
+        <div class="tile span-3x4" data-type="img" data-src="assets/gallery/grain_pop.jpg">
+          <img src="assets/gallery/grain_pop.jpg" alt="Grain Pop">
+          <div class="cap">Grain Pop</div>
+        </div>
+
+                <div class="tile span-3x4" data-type="img" data-src="assets/gallery/grain_pop.jpg">
+          <img src="assets/gallery/grain_pop.jpg" alt="Grain Pop">
+          <div class="cap">Grain Pop</div>
+        </div>
+
+                <div class="tile span-3x4" data-type="img" data-src="assets/gallery/grain_pop.jpg">
+          <img src="assets/gallery/grain_pop.jpg" alt="Grain Pop">
+          <div class="cap">Grain Pop</div>
+        </div>
+
+                <div class="tile span-3x4" data-type="img" data-src="assets/gallery/grain_pop.jpg">
+          <img src="assets/gallery/grain_pop.jpg" alt="Grain Pop">
+          <div class="cap">Grain Pop</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>经历</h2>
+      <div class="timeline">
+        <div class="titem">
+          <strong>视频系统工程师（SE）</strong>｜相机影像<br/>
+          <span class="subtitle">2023 — 至今｜北京 / 上海</span>
+          <ul>
+            <li>视频能力规划与端到端方案设计（ISP/算法/编码）。</li>
+            <li>HDR、稳像、AI降噪、多摄协同、色域映射等方向。</li>
+            <li>跨团队评审与风险推进，沉淀工具链与 SOP。</li>
+          </ul>
+        </div>
+        <div class="titem">
+          <strong>算法与软件工程</strong>｜多光谱 / AR<br/>
+          <span class="subtitle">2021 — 2023</span>
+          <ul><li>AR 眼镜畸变校正与数据链路；多光谱移动端推理。</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>联系</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p>合作/交流请发邮件，或在 B 站与我互动。也欢迎添加微信进一步沟通（备注来意）。</p>
+          <div class="row">
+            <a class="chip" href="mailto:youremail@example.com">Email</a>
+            <a class="chip" href="https://space.bilibili.com/" target="_blank" rel="noreferrer">Bilibili</a>
+            <a class="chip" href="#">WeChat</a>
           </div>
         </div>
+        <div class="card">
+          <h3>资源与下载</h3>
+          <ul>
+            <li><a href="#cv" download>个人简历（PDF）</a></li>
+            <li><a href="#">项目白皮书（Notion/Markdown）</a></li>
+            <li><a href="#">摄影集选（JPEG.zip）</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <section id="projects" class="wrap">
-    <h2 data-i18n="projects_title">项目与案例</h2>
-    <p class="sub" data-i18n="projects_sub">从系统方案到落地验证，选取代表性的工程项目与商业拍摄案例。</p>
-    <div class="grid cards">
-      <article class="card">
-        <img class="cover" src="https://picsum.photos/id/1011/800/450" alt="project1">
-        <div class="body">
-          <h3>Dolby Vision 录制全链路</h3>
-          <p class="sub">Sensor HDR → ISP → RPU 元数据 → 编码打包（Profile 8.x） → 播放验证。</p>
-          <div class="meta"><span class="chip">HDR</span><span class="chip">RPU</span><span class="chip">HEVC</span></div>
-          <a class="btn" href="#contact">咨询细节</a>
-        </div>
-      </article>
-      <article class="card">
-        <img class="cover" src="https://picsum.photos/id/1025/800/450" alt="project2">
-        <div class="body">
-          <h3>前置通话画质提升</h3>
-          <p class="sub">AINR + 人脸分割 ATM + 背景增强，在第三方视频通话中稳定落地。</p>
-          <div class="meta"><span class="chip">AINR</span><span class="chip">Seg</span><span class="chip">Low-light</span></div>
-          <a class="btn" href="#contact">查看报告</a>
-        </div>
-      </article>
-      <article class="card">
-        <img class="cover" src="https://picsum.photos/id/1035/800/450" alt="project3">
-        <div class="body">
-          <h3>高速视频功耗优化</h3>
-          <p class="sub">4K120 HDR 方案在功耗红线下的系统性取舍与调度。</p>
-          <div class="meta"><span class="chip">4K120</span><span class="chip">Power</span><span class="chip">Scheduler</span></div>
-          <a class="btn" href="#contact">了解方案</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="gallery" class="wrap">
-    <h2 data-i18n="gallery_title">摄影/视频作品</h2>
-    <p class="sub" data-i18n="gallery_sub">部分作品与片段（点击可放大）。</p>
-    <div class="gallery" id="lightboxRoot">
-      <img src="https://picsum.photos/id/1041/600/400" alt="shot1">
-      <img src="https://picsum.photos/id/1043/600/400" alt="shot2">
-      <img src="https://picsum.photos/id/1045/600/400" alt="shot3">
-      <img src="https://picsum.photos/id/1050/600/400" alt="shot4">
-      <img src="https://picsum.photos/id/1060/600/400" alt="shot5">
-      <img src="https://picsum.photos/id/1069/600/400" alt="shot6">
-    </div>
-  </section>
-
-  <section id="writing" class="wrap">
-    <h2 data-i18n="writing_title">技术与创作</h2>
-    <p class="sub" data-i18n="writing_sub">记录方案设计、调试经验与创作心得。</p>
-    <div class="grid cards">
-      <article class="card">
-        <div class="body">
-          <h3>色域映射：从算法到落地</h3>
-          <p class="sub">手机 ISP 的 Gamut Mapping 全景与实现细节。</p>
-          <a class="btn" href="#">阅读草稿</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="body">
-          <h3>EIS vs DIS：稳定性的工程权衡</h3>
-          <p class="sub">不同版本 EIS 的适配、裁切与时序。</p>
-          <a class="btn" href="#">阅读草稿</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="about" class="wrap">
-    <h2 data-i18n="about_title">关于我</h2>
-    <p class="sub" data-i18n="about_sub">工程与审美都要在线：既写方案与代码，也拍影像与讲故事。</p>
-    <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px">
-      <div class="card"><div class="body">
-        <h3>简述</h3>
-        <p>现居北京/上海（可出差），专注移动影像系统；独立承接视频创作与技术咨询。</p>
-        <div class="meta"><span class="chip">中文 / English</span><span class="chip">远程协作</span></div>
-      </div></div>
-      <div class="card"><div class="body">
-        <h3>技能栈</h3>
-        <p>ISP Pipeline、调试与 Tuning｜Android/Camera HAL3｜视频编解码（HEVC/AV1）｜HDR（PQ/HLG/Dolby Vision）｜拍摄与后期（DaVinci/Final Cut）。</p>
-      </div></div>
-    </div>
-
-    <h3 style="margin-top:24px">经历</h3>
-    <div class="timeline">
-      <div class="tl-item"><strong>视频赛道 SE · 小米</strong><div class="sub">2022 — 至今 · 方案设计、竞品拆解、视频画质与功耗优化</div></div>
-      <div class="tl-item"><strong>自由摄影/视频</strong><div class="sub">2018 — 至今 · 人像/纪录/商业短片</div></div>
-    </div>
-  </section>
-
-  <section id="contact" class="wrap">
-    <h2 data-i18n="contact_title">联系我</h2>
-    <p class="sub" data-i18n="contact_sub">项目合作、技术咨询或影片创作，欢迎留言。</p>
-    <form class="card body" style="padding:18px" action="https://formspree.io/f/your-code" method="POST">
-      <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
-        <label>姓名<input name="name" required style="width:100%"></label>
-        <label>邮箱<input name="email" type="email" required style="width:100%"></label>
-      </div>
-      <label>主题<input name="subject" required style="width:100%"></label>
-      <label>内容<textarea name="message" rows="5" required style="width:100%"></textarea></label>
-      <button class="btn" type="submit">发送</button>
-    </form>
-  </section>
-
   <footer>
-    <div class="wrap">© <span id="year"></span> Neil Zhou · <a href="#" rel="nofollow">隐私权</a> · <a href="#" rel="nofollow">RSS</a></div>
+    <div class="wrap" style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div>© <span id="year"></span> Neil Zhou — Pop Cinema</div>
+      <div class="subtitle">单文件构建，直接部署 GitHub Pages / Vercel。</div>
+    </div>
   </footer>
 
-  <dialog id="lightbox" style="border:none;border-radius:16px;padding:0;background:transparent">
-    <img id="lightboxImg" style="max-width:90vw;max-height:80vh;border-radius:16px;border:1px solid var(--line)" alt="preview" />
-  </dialog>
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose">关闭</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+</div>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+/* 年份 */
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    if(savedTheme){ document.documentElement.dataset.theme = savedTheme; if(savedTheme==='light'){document.documentElement.style.colorScheme='light'} }
-    themeToggle.addEventListener('click',()=>{
-      const current = document.documentElement.dataset.theme || (prefersDark ? 'dark':'light');
-      const next = current==='dark' ? 'light' : 'dark';
-      document.documentElement.dataset.theme = next; localStorage.setItem('theme', next);
-      document.documentElement.style.colorScheme = next;
-    });
-
-    // Simple i18n (CN/EN)
-    const dict = {
-      en:{
-        roles:'System Engineer · Photographer · Filmmaker',
-        headline:'Engineering meets visual storytelling.',
-        intro:'I build mobile imaging & video systems (ISP/codec/computational video) and shoot documentary & commercial films.',
-        patents:'Patents',projects_count:'Shipped Projects',exp:'Experience',
-        view_projects:'View Projects',hire_me:'Hire Me',
-        feature_title:'Latest · Low-light AINR',
-        feature_desc:'Joint demosaic + denoise for natural grain and detail in extreme darkness.',
-        projects_title:'Projects & Case Studies',projects_sub:'From system design to launch, selected engineering and commercial work.',
-        gallery_title:'Photography / Video',gallery_sub:'Selected stills & clips (click to enlarge).',
-        writing_title:'Writing',writing_sub:'Notes on pipelines, debugging and craft.',
-        about_title:'About',about_sub:'Engineering x Aesthetics: I design systems and craft images.',
-        contact_title:'Contact',contact_sub:'For collaborations, consulting or films.'
-      }
-    };
-    const langToggle = document.getElementById('langToggle');
-    let lang = localStorage.getItem('lang') || 'zh';
-    function applyI18n(){
-      const map = dict[lang==='en'?'en':null];
-      if(!map) return;
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        if(map[key]) el.textContent = map[key];
-      });
-      langToggle.textContent = lang==='en' ? 'EN/中' : '中/EN';
+/* 粒子星尘（保留/增强） */
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+let w,h,dpr,particles; let mouseX=.5, mouseY=.5; let t=0;
+function resize(){
+  dpr = Math.max(1, Math.min(2, window.devicePixelRatio||1));
+  w = canvas.width = Math.floor(innerWidth*dpr);
+  h = canvas.height = Math.floor(innerHeight*dpr);
+  canvas.style.width = innerWidth+'px';
+  canvas.style.height = innerHeight+'px';
+  initStars();
+}
+function initStars(){
+  const count = Math.floor((innerWidth*innerHeight)/9000);
+  particles = new Array(count).fill(0).map(()=>({
+    x: Math.random()*w, y: Math.random()*h,
+    vx:(Math.random()-.5)*.16, vy:(Math.random()-.5)*.16,
+    r: Math.random()*1.9+.5, a: Math.random()*Math.PI*2
+  }));
+}
+function loop(){
+  t += 0.0025;
+  ctx.clearRect(0,0,w,h);
+  const g = ctx.createRadialGradient(w*mouseX, h*mouseY, 0, w*.5, h*.5, Math.max(w,h)*.8);
+  g.addColorStop(0, 'rgba(255,255,255,0.05)');
+  g.addColorStop(1, 'rgba(255,255,255,0.00)');
+  ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+  for(const p of particles){
+    const fx = Math.sin((p.y*0.002)+t*2)*0.09;
+    const fy = Math.cos((p.x*0.002)+t*2)*0.09;
+    p.vx += fx + (mouseX-.5)*0.003;
+    p.vy += fy + (mouseY-.5)*0.003;
+    p.x += p.vx; p.y += p.vy;
+    p.vx *= 0.985; p.vy *= 0.985;
+    if(p.x<0)p.x+=w; if(p.x>w)p.x-=w; if(p.y<0)p.y+=h; if(p.y>h)p.y-=h;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r*dpr, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(250,255,255,0.8)'; ctx.fill();
+  }
+  // 近邻连线（淡金色）
+  ctx.lineWidth = .6*dpr; ctx.strokeStyle = 'rgba(246,211,101,0.10)';
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<i+10 && j<particles.length;j++){
+      const a=particles[i], b=particles[j];
+      const dx=a.x-b.x, dy=a.y-b.y; const d=dx*dx+dy*dy;
+      if(d < (150*dpr)*(150*dpr)){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
     }
-    langToggle.addEventListener('click',()=>{ lang = (lang==='en'?'zh':'en'); localStorage.setItem('lang',lang); applyI18n(); });
-    applyI18n();
+  }
+  requestAnimationFrame(loop);
+}
+window.addEventListener('resize', resize, {passive:true});
+window.addEventListener('pointermove', e=>{
+  const rect = canvas.getBoundingClientRect();
+  mouseX = (e.clientX - rect.left)/rect.width;
+  mouseY = (e.clientY - rect.top)/rect.height;
+},{passive:true});
+resize(); loop();
 
-    // Lightbox
-    const dlg = document.getElementById('lightbox');
-    const img = document.getElementById('lightboxImg');
-    document.getElementById('lightboxRoot').addEventListener('click',e=>{
-      if(e.target.tagName==='IMG'){ img.src = e.target.src.replace('/600/400','/1200/800'); dlg.showModal(); }
-    });
-    dlg.addEventListener('click',()=> dlg.close());
+/* 画廊灯箱（图片/视频） */
+const lb = document.getElementById('lightbox');
+const lbC = document.getElementById('lightboxContent');
+const lbClose = document.getElementById('lightboxClose');
+document.querySelectorAll('.tile').forEach(tile=>{
+  if(tile.tagName.toLowerCase()==='a') return; // 外链跳过
+  tile.addEventListener('click', ()=>{
+    const type = tile.dataset.type || 'img';
+    const src = tile.dataset.src;
+    lbC.innerHTML = '';
+    if(type==='video'){
+      const v = document.createElement('video');
+      v.src = src; v.controls = true; v.autoplay = true; v.style.background='#000';
+      lbC.appendChild(v);
+    }else{
+      const img = document.createElement('img'); img.src = src; lbC.appendChild(img);
+    }
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+  });
+});
+lbClose.addEventListener('click', ()=>{
+  lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
+  lbC.innerHTML = '';
+});
+lb.addEventListener('click', (e)=>{ if(e.target===lb) lbClose.click(); });
 
-    // Smooth hash scrolling offset for sticky header
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id = a.getAttribute('href'); if(id.length>1){
-          const el = document.querySelector(id); if(el){ e.preventDefault(); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 64, behavior:'smooth'}); }
-        }
-      });
-    });
-  </script>
+</script>
 </body>
 </html>
