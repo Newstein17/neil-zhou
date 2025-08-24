@@ -16,18 +16,18 @@
   --gap:18px;
 
   /* 首页（赛博朋克多色） */
-  --home-g1:#00e6ff; --home-g2:#ff3ab2; --home-g3:#ffd400; --home-g4:#7afcff;
+  --home-g1:#00e6ff; --home-g2:#ff3ab2; --home-g3:#ffd400; --home-g4:#54e048;
 
   /* 各栏目单角主题色 */
   --about-c:#7afcff;     /* 青 */
   --projects-c:#ff7ad9;  /* 品红 */
-  --gallery-c:#b085f5;   /* 紫 */
+  --gallery-c:#7850b3;   /* 紫 */
   --experience-c:#66ffa8;/* 青绿 */
   --contact-c:#ffd36e;   /* 金黄 */
 
   /* 画廊金×紫 */
-  --lux-g1:#f6d365; --lux-g2:#fda085;
-  --lux-p1:#b085f5; --lux-p2:#7e57c2;
+  --lux-g1:#f6d365; --lux-g2:#b97adb;
+  --lux-p1:#c86060; --lux-p2:#7e57c2;
 }
 
 /* 基础排版 */
@@ -164,10 +164,10 @@ footer{
       <section class="hero">
         <div>
           <div class="badge">艺术设计 × 科技｜视频SE｜相机 / ISP</div>
-          <h1>你好，我是 Neil。<br/>做影像系统，也做影像设计。</h1>
-          <p class="subtitle">把 <strong>视频画质 / ISP Pipeline / AI 降噪与稳像</strong> 和 <strong>电影语言</strong> 混合出新的美学。</p>
+          <h1>你好，我是 Neil。<br/>做影片艺术，也做影像系统设计。</h1>
+          <p class="subtitle">把 <strong>视频画质 / ISP Pipeline / 编解码</strong> 和 <strong>电影技术</strong> 混合出新的灵感。</p>
           <div class="row" style="margin-top:14px">
-            <a class="btn" data-route="projects">查看项目</a>
+            <a class="btn" data-route="projects">查看项目(in progress)</a>
             <a class="btn" data-route="gallery">进入画廊</a>
           </div>
         </div>
@@ -176,7 +176,7 @@ footer{
             <img src="assets/gallery/myself01.jpg" poster="assets/gallery/myself01.jpg" autoplay muted loop playsinline></img>
             <div class="scanline"></div>
           </div>
-          <div class="subtitle" style="margin-top:10px">短片片段｜赛博色彩与城市光影</div>
+          <div class="subtitle" style="margin-top:10px">关于我｜this is me</div>
         </div>
       </section>
     </div>
@@ -229,10 +229,10 @@ footer{
         <h2>画廊（摄影 + 视频）</h2>
         <div class="g-topbar">
           <div class="g-tabs">
-            <button class="active" data-group="portrait">Portrait</button>
-            <button data-group="street">Street</button>
-            <button data-group="color">Color</button>
-            <button data-group="motion">Motion</button>
+            <button class="active" data-group="film">film</button>
+            <button data-group="nature">nature</button>
+            <button data-group="city">city</button>
+            <button data-group="food">food</button>
           </div>
           <div class="g-pages" id="gPages"></div>
         </div>
@@ -293,7 +293,7 @@ footer{
   <footer>
     <div class="wrap" style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
       <div>© <span id="year"></span> Neil Zhou — Pop Cinema</div>
-      <div class="subtitle">多页轻柔切换；单角主题色 + 自适应粒子；画廊分组/分页/B站灯箱。</div>
+      <div class="subtitle">Welcome here</div>
     </div>
   </footer>
 
@@ -349,18 +349,19 @@ const MODES = {
     radius:[.5, 2.1]
   },
   drift: { // 关于
-    density: 10500, speed: .09,
-    color: () => 'rgba(250,255,255,0.75)', connect: null,
-    step(p){ p.vx += (Math.random()-.5)*0.003; p.vy += (Math.random()-.5)*0.003; p.vx*=0.992; p.vy*=0.992; },
-    radius:[.4, 1.4]
+    density: 9500, speed: .05,
+    color: () => 'rgba(250,255,255,0.85)', connect: null,
+    step(p){ p.vx += (Math.random()-.5)*1.1; p.vy += (Math.random()-.5)*0.3; p.vx*=0.95; p.vy*=0.95; },
+    //step(p){ p.vx += Math.sin((p.y*0.003)+t*3)*0.03; p.vy += Math.cos(t*2)*0.005; p.vx*=0.985; p.vy*=0.985; },
+    radius:[.4, 2.4]
   },
   orbitRings: { // 项目
-    density: 9800, speed: .00,
+    density: 20000, speed: .005,
     color: () => 'rgba(210,235,255,0.9)',
-    connect: { dist: 150, alpha: 0.04, color: 'rgba(200,230,255,VAR)' },
+    connect: { dist: 150, alpha: 0.4, color: 'rgba(200,230,255,VAR)' },
     step(p){ const cx=w*0.5, cy=h*0.5; p._theta=(p._theta||Math.random()*Math.PI*2)+0.002; p._rad=p._rad||(Math.random()*Math.min(w,h)*0.45+30);
-      p.x=cx+Math.cos(p._theta)*p._rad; p.y=cy+Math.sin(p._theta)*p._rad; if(Math.random()<0.003) p._tw=1; },
-    radius:[.6, 1.8]
+      p.x=cx+Math.cos(p._theta)*p._rad*2.5; p.y=cy+Math.sin(p._theta)*p._rad; if(Math.random()<0.003) p._tw=1; },
+    radius:[.6, 2.2]
   },
   waveSheen: { // 画廊
     density: 11200, speed: .08,
@@ -493,54 +494,95 @@ window.addEventListener('load', ()=>{ const h=(location.hash||'#home').slice(1);
 
 /* ===== 画廊数据（分组+分页） 按需替换你的路径/BV号 ===== */
 const galleryData = {
-  portrait: [
+  film: [
     [
-      {type:'bili', bvid:'BV1QRyaYhEEQ', title:'B站短片：newstein film10', cover:'assets/gallery/newsVideo/10.jpg', colspan:4},
-      {type:'bili', bvid:'BV1N3411k7Dy', title:'B站短片：newstein film9', cover:'assets/gallery/newsVideo/9.jpg', colspan:4},
-      {type:'bili', bvid:'BV1Yg411M7is', title:'B站短片：newstein film8', cover:'assets/gallery/newsVideo/8.jpg', colspan:4},
-      {type:'bili', bvid:'BV1eK4y1p7fh', title:'B站短片：newstein film7', cover:'assets/gallery/newsVideo/7.jpg', colspan:4},
-      {type:'bili', bvid:'BV1Pr4y1F7Gw', title:'B站短片：newstein film6', cover:'assets/gallery/newsVideo/6.PNG', colspan:4},
-      {type:'bili', bvid:'BV1r64y1F76u', title:'B站短片：newstein film5', cover:'assets/gallery/newsVideo/5.PNG', colspan:4},
-      {type:'bili', bvid:'BV1mV411r7pp', title:'B站短片：newstein film4', cover:'assets/gallery/newsVideo/4.PNG', colspan:4},
-      {type:'bili', bvid:'BV1H4411u7q7', title:'B站短片：newstein film1', cover:'assets/gallery/newsVideo/1.jpg', colspan:4},
-      {type:'img', src:'assets/gallery/portrait_color.jpg', title:'Portrait — Pop', colspan:6},
-      {type:'img', src:'assets/gallery/portrait_gold.jpg', title:'Gold Detail', colspan:3},
-      {type:'video', src:'assets/gallery/portrait_motion.mp4', title:'Motion Look', colspan:3},
-      {type:'img', src:'assets/gallery/portrait_bw.jpg', title:'B/W Study', colspan:4},
-      {type:'img', src:'assets/gallery/portrait_close.jpg', title:'Close-up', colspan:4}
-    ],
-    [
-      {type:'img', src:'assets/gallery/portrait_02.jpg', title:'Studio Color', colspan:6},
-      {type:'img', src:'assets/gallery/portrait_03.jpg', title:'Texture', colspan:6},
-      {type:'img', src:'assets/gallery/portrait_04.jpg', title:'Cinematic', colspan:8},
-      {type:'video', src:'assets/gallery/portrait_loop.mp4', title:'Loop', colspan:4}
+      {type:'bili', bvid:'BV1QRyaYhEEQ', title:'B站短片：newstein film10', cover:'assets/gallery/newsVideo/250824_2.jpg', colspan:12},
+      {type:'bili', bvid:'BV1N3411k7Dy', title:'B站短片：newstein film9', cover:'assets/gallery/newsVideo/250824_8.jpg', colspan:12},
+      {type:'bili', bvid:'BV1Yg411M7is', title:'B站短片：newstein film8', cover:'assets/gallery/newsVideo/250824_7.jpg', colspan:12},
+      {type:'bili', bvid:'BV1eK4y1p7fh', title:'B站短片：newstein film7', cover:'assets/gallery/newsVideo/250824_6.jpg', colspan:12},
+      {type:'bili', bvid:'BV1Pr4y1F7Gw', title:'B站短片：newstein film6', cover:'assets/gallery/newsVideo/250824_5.jpg', colspan:12},
+      {type:'bili', bvid:'BV1r64y1F76u', title:'B站短片：newstein film5', cover:'assets/gallery/newsVideo/250824_4.jpg', colspan:12},
+      {type:'bili', bvid:'BV1mV411r7pp', title:'B站短片：newstein film4', cover:'assets/gallery/newsVideo/250824_3.jpg', colspan:12},
+      {type:'bili', bvid:'BV1H4411u7q7', title:'B站短片：newstein film1', cover:'assets/gallery/newsVideo/250824_1.jpg', colspan:12}
     ]
   ],
-  street: [[
-      {type:'img', src:'assets/gallery/street_01.jpg', title:'Street I', colspan:6},
-      {type:'img', src:'assets/gallery/street_02.jpg', title:'Street II', colspan:3},
-      {type:'img', src:'assets/gallery/street_03.jpg', title:'Street III', colspan:3},
-      {type:'bili', bvid:'BV1xx4y1H7xx', title:'B站：城市机理', colspan:6},
-      {type:'img', src:'assets/gallery/street_04.jpg', title:'Neon', colspan:6}
+  nature: [[
+          {type:'img', src:'assets/gallery/nature/250824_51.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_57.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_59.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_54.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_6.jpg', title:'nature', colspan:7},
+      {type:'img', src:'assets/gallery/nature/250824_1.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_15.jpg', title:'nature', colspan:4},
+      {type:'img', src:'assets/gallery/nature/250824_18.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_19.jpg', title:'nature', colspan:7},
+      {type:'img', src:'assets/gallery/nature/250824_2.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_20.jpg', title:'nature', colspan:4},
+      {type:'img', src:'assets/gallery/nature/250824_3.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_42.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_43.jpg', title:'nature', colspan:4},
+      {type:'img', src:'assets/gallery/nature/250824_44.jpg', title:'nature', colspan:4},
+      {type:'img', src:'assets/gallery/nature/250824_45.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_46.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_47.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_16.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_17.jpg', title:'nature', colspan:5}
+      ],
+      [
+      {type:'img', src:'assets/gallery/nature/250824_48.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_49.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_5.jpg', title:'nature', colspan:4},
+      {type:'img', src:'assets/gallery/nature/250824_50.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_52.jpg', title:'nature', colspan:5},
+      {type:'img', src:'assets/gallery/nature/250824_55.jpg', title:'nature', colspan:6},
+      {type:'img', src:'assets/gallery/nature/250824_56.jpg', title:'nature', colspan:4}
   ]],
-  color: [[
-      {type:'img', src:'assets/gallery/color_blocks.jpg', title:'Color Blocks', colspan:12},
-      {type:'img', src:'assets/gallery/color_01.jpg', title:'Saturation', colspan:6},
-      {type:'img', src:'assets/gallery/color_02.jpg', title:'Complimentary', colspan:6},
-      {type:'video', src:'assets/gallery/color_loop.mp4', title:'Palette Motion', colspan:6},
-      {type:'img', src:'assets/gallery/grain_pop.jpg', title:'Grain Pop', colspan:6}
+  city: [[
+      {type:'img', src:'assets/gallery/city/250824_7.jpg', title:'city', colspan:8},
+      {type:'img', src:'assets/gallery/city/250824_8.jpg', title:'city', colspan:7},
+      {type:'img', src:'assets/gallery/city/250824_10.jpg', title:'Color Blocks', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_11.jpg', title:'Saturation', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_12.jpg', title:'Complimentary', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_13.jpg', title:'Palette Motion', colspan:6},
+      {type:'img', src:'assets/gallery/city/250824_14.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_21.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_22.jpg', title:'city', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_25.jpg', title:'city', colspan:6},
+      {type:'img', src:'assets/gallery/city/250824_26.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_27.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_28.jpg', title:'city', colspan:3},
+      {type:'img', src:'assets/gallery/city/250824_29.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_30.jpg', title:'city', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_31.jpg', title:'city', colspan:6},
+      {type:'img', src:'assets/gallery/city/250824_32.jpg', title:'city', colspan:6},
+      {type:'img', src:'assets/gallery/city/250824_33.jpg', title:'city', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_34.jpg', title:'city', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_35.jpg', title:'city', colspan:6},
+      {type:'img', src:'assets/gallery/city/250824_36.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_37.jpg', title:'city', colspan:3},
+      {type:'img', src:'assets/gallery/city/250824_38.jpg', title:'city', colspan:7},
+      {type:'img', src:'assets/gallery/city/250824_39.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_4.jpg', title:'city', colspan:6},
+      {type:'img', src:'assets/gallery/city/250824_40.jpg', title:'city', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_41.jpg', title:'city', colspan:4},
+      {type:'img', src:'assets/gallery/city/250824_58.jpg', title:'city', colspan:3}
+      ],
+      [ 
+      {type:'img', src:'assets/gallery/city/250824_61.jpg', title:'city', colspan:12},
+      {type:'img', src:'assets/gallery/city/250824_62.jpg', title:'city', colspan:5},
+      {type:'img', src:'assets/gallery/city/250824_9.jpg', title:'city', colspan:4}
   ]],
-  motion: [[
-      {type:'video', src:'assets/gallery/city_loop.mp4', title:'City Motion', colspan:8},
-      {type:'img', src:'assets/gallery/hero_wide.jpg', title:'Signature Wide', colspan:12},
-      {type:'img', src:'assets/gallery/space_light.jpg', title:'Space & Light', colspan:6},
-      {type:'bili', bvid:'BV1xxxxY7zzz', title:'B站短片合集', colspan:6}
+  food: [[
+      {type:'img', src:'assets/gallery/food/250824_53.jpg', title:'Space & Light', colspan:12},
+      {type:'img', src:'assets/gallery/food/250824_23.jpg', title:'City Motion', colspan:8},
+      {type:'img', src:'assets/gallery/food/250824_24.jpg', title:'Signature Wide', colspan:6}
+
   ]]
 };
 
 const grid = document.getElementById('galleryGrid');
 const pagesBar = document.getElementById('gPages');
-let curGroup = 'portrait', curPage = 0;
+let curGroup = 'film', curPage = 0;
 
 function createTile(item){
   const tile = document.createElement('div');
